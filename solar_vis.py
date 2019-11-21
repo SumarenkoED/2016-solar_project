@@ -12,7 +12,7 @@ header_font = "Arial-16"
 window_width = 800
 """Ширина окна"""
 
-window_height = 800
+window_height = 400
 """Высота окна"""
 
 scale_factor = None
@@ -95,7 +95,7 @@ def update_system_name(space, system_name):
     **space** — холст для рисования.
     **system_name** — название системы тел.
     """
-    space.create_text(30, 80, tag="header", text=system_name, font=header_font)
+    space.create_text(30, 80, tag = "header", text = system_name, font = header_font)
 
 
 def update_object_position(space, body):
@@ -111,7 +111,7 @@ def update_object_position(space, body):
     r = body.R
     if x + r < 0 or x - r > window_width or y + r < 0 or y - r > window_height:
         space.coords(body.image, window_width + r, window_height + r,
-                     window_width + 2*r, window_height + 2*r)  # положить за пределы окна
+                     window_width + 2 * r, window_height + 2 * r)  # положить за пределы окна
     space.coords(body.image, x - r, y - r, x + r, y + r)
 
 
